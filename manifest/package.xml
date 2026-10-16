@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
-		<members>New_Acct_Auto_Create_NFA</members>
-		<members>New_Customer_Feature_Flag_Update_NFA</members>
+		<members>NFA_Creation</members>
+		<members>NFA_Send_to_WebApp_Update</members>
 		<name>Flow</name>
 	</types>
 	<version>68.0</version>
