@@ -4,16 +4,60 @@ Version 3: Send to NetSuite - Contact
 Version 5: Update ASD Email
 ValidationRule Onboarding_Account_Owner 
 
-# new changes
-## UDC-4446 NFA Reva and Zendura
+# UDC-4446 NFA Reva and Zendura
+## 1) Records NFA
+    - No Zendura
+    - Reva
+
+## 2) new changes
 - Desactivate
     - Process Builder - New Customer Feature Flag Update - NFA
     - Process Builder - NFA Create
 - Activate 
     - Flow Builder NFA Creation - V1
     - Flow Builder NFA Send to WebApp Update - V1
+- Delete
+    - Flow Builder New Acct Auto Create NFA - V1
 
 
+
+
+# UDC-4421 KAI MRA
+## 1) New KAI fields
+    - KAI_2_Retainer_Bundle__c
+    - KAI_4_Retainer_Bundle__c
+    - KAI_5_Retainer_Bundle__c
+    - KAI_Aligner_Price__c
+    - KAI_Comprehensive_Bundle__c
+    - KAI_Mild_Bundle__c
+    - KAI_Retainer_Price__c
+    - KAI_STL_Price__c
+    - KAI_uAdjust_10_Bundle__c
+
+## set FLS
+## deploy pagelayout y flexipage
+    - Marketing Program Layout
+    - Marketing_Reward_Record_Page
+
+# 2) Records MR
+    - KAI
+    - Fresh Start MRA
+    - STL100
+    - uAssist 100 MRA
+    - STLONE MRA 
+
+# 3) no need changes
+- Process Builder - Version 4: Create MRA send to Boomi	- Active
+- Process Builder - Version 18: Create Futures MRA - Active
+- Process Builder - Create MRAs for New Accounts - Inactive
+- Flow Builder - Create MRAs for New Accounts - V2
+
+# 4) new Flow Builder 
+
+
+# 5) need changes
+- Flow Builder Record Trigger - Copy pricing fields on MRA record from MR record on Effective date - V8
+- Flow Builder Copy pricing fields on MRA record from MR record on Effective date - V9
 
 
 
@@ -23,17 +67,6 @@ ValidationRule Onboarding_Account_Owner
 # ?????? Process Builder - Create MRAs for New Accounts ?????
 
 
-# post deploy task
-- field visibility
-- add fields in a new layout section
-- enable flow
-- add conditions in Account and Contact Duplication Rules = Current User: Usernamenot equal toapiuser@ulabsystems.com.staging
-
-## flows replacing Process Builders (deployed as Draft)
-- NFA Creation (Account) replaces Parent_Account_Checkbox
-- NFA Send to WebApp Update (New_Feature_Association__c) replaces New_Customer_Feature_Flag_Update_NFA
-- cutover: deactivate both Process Builders first, then activate both flows (avoid double execution)
-- verify the uLab Feature IDs in NFA Creation exist in the target org (a54Rh00000CzdToIAJ, a546g000000qt17AAA)
 
 
 
@@ -42,8 +75,3 @@ ValidationRule Onboarding_Account_Owner
 
 
 
-
-# no need changes
-- Process Builder - New Customer Feature Flag Update - NFA
-- Process Builder - Create MRA send to Boomi
-- Process Builder - Create Futures MRA
