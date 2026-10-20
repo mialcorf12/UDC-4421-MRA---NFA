@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>68.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>EndDateNext3Months</name>
+        <dataType>Date</dataType>
+        <expression>IF(
+  MONTH({!$Flow.CurrentDate}) &gt;= 10,
+  DATE(
+    YEAR({!$Flow.CurrentDate}) + 1,
+    MONTH({!$Flow.CurrentDate}) - 9,
+    MIN(
+      DAY({!$Flow.CurrentDate}),
+      DAY(
+        IF(
+          MONTH({!$Flow.CurrentDate}) == 12,
+          DATE(YEAR({!$Flow.CurrentDate}) + 2, 1, 1) - 1,
+          DATE(YEAR({!$Flow.CurrentDate}) + 1, MONTH({!$Flow.CurrentDate}) - 8, 1) - 1
+        )
+      )
+    )
+  ),
+  DATE(
+    YEAR({!$Flow.CurrentDate}),
+    MONTH({!$Flow.CurrentDate}) + 3,
+    MIN(
+      DAY({!$Flow.CurrentDate}),
+      DAY(
+        IF(
+          MONTH({!$Flow.CurrentDate}) == 9,
+          DATE(YEAR({!$Flow.CurrentDate}) + 1, 1, 1) - 1,
+          DATE(YEAR({!$Flow.CurrentDate}), MONTH({!$Flow.CurrentDate}) + 4, 1) - 1
+        )
+      )
+    )
+  )
+)</expression>
+    </formulas>
+    <formulas>
+        <name>Today</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Create KAI MRAs {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create KAI MRAs</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>KAI_MRA</name>
+        <label>KAI MRA</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>myRule_1_A6</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Company__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Effective_Date__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>End_Date__c</field>
+            <value>
+                <elementReference>EndDateNext3Months</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Marketing_Program__c</field>
+            <value>
+                <stringValue>a4xhu0000000Jp4AAE</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>RecordTypeId</field>
+            <value>
+                <elementReference>Get_Record_Type_Program.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Send_to_Boomi__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <object>Marketing_Reward_Association__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <recordLookups>
+        <name>Get_Record_Type_Program</name>
+        <label>Get Record Type Program</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>KAI_MRA</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>SobjectType</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Marketing_Reward_Association__c</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Program_Association</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>RecordType</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>myRule_1_A6</name>
+        <label>Update MRAs Applied</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>KAI_MRAs_Applied__c</field>
+            <value>
+                <elementReference>Today</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Get_Record_Type_Program</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Kai_Acct_Number__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>false</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>KAI_MRAs_Applied__c</field>
+            <operator>IsNull</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <filters>
+            <field>KAI_MRA_assigned__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <object>Account</object>
+        <recordTriggerType>CreateAndUpdate</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

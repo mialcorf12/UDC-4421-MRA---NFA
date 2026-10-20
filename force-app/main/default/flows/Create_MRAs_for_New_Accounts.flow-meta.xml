@@ -88,7 +88,7 @@ Adjusting for Rec types</description>
         <inputAssignments>
             <field>Marketing_Program__c</field>
             <value>
-                <stringValue>a4xRf0000067minIAA</stringValue>
+                <stringValue>a4xhu0000000Jp3AAE</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -135,7 +135,7 @@ Adjusting for Rec types</description>
         <inputAssignments>
             <field>Marketing_Program__c</field>
             <value>
-                <stringValue>a4x6g000001lt77AAA</stringValue>
+                <stringValue>a4xhu0000000Jp5AAE</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -188,7 +188,7 @@ Adjusting for Rec types</description>
         <inputAssignments>
             <field>Marketing_Program__c</field>
             <value>
-                <stringValue>a4x6g000001luuyAAA</stringValue>
+                <stringValue>a4xhu0000000Jp7AAE</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -241,7 +241,7 @@ Adjusting for Rec types</description>
         <inputAssignments>
             <field>Marketing_Program__c</field>
             <value>
-                <stringValue>a4xRh0000007MdJIAU</stringValue>
+                <stringValue>a4xhu0000000Jp6AAE</stringValue>
             </value>
         </inputAssignments>
         <inputAssignments>
@@ -334,7 +334,7 @@ Adjusting for Rec types</description>
         <connector>
             <targetReference>Get_Record_Type_Program</targetReference>
         </connector>
-        <filterLogic>and</filterLogic>
+        <filterLogic>1 AND 2 AND 3 AND 4 AND (5 OR 6)</filterLogic>
         <filters>
             <field>uLab_Acct_Number__c</field>
             <operator>IsNull</operator>
@@ -357,6 +357,13 @@ Adjusting for Rec types</description>
             </value>
         </filters>
         <filters>
+            <field>UDC_MRA_assigned__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </filters>
+        <filters>
             <field>BillingCountry</field>
             <operator>EqualTo</operator>
             <value>
@@ -364,10 +371,10 @@ Adjusting for Rec types</description>
             </value>
         </filters>
         <filters>
-            <field>UDC_MRA_assigned__c</field>
+            <field>BillingCountry</field>
             <operator>EqualTo</operator>
             <value>
-                <numberValue>0.0</numberValue>
+                <stringValue>United States</stringValue>
             </value>
         </filters>
         <object>Account</object>

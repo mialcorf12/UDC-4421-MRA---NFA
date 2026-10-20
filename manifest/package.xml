@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
 	<types>
+		<members>Account.KAI_MRAs_Applied__c</members>
+		<members>Account.KAI_MRA_assigned__c</members>
+		<members>Account.UDC_MRA_assigned__c</members>
 		<members>Marketing_Reward__c.KAI_2_Retainer_Bundle__c</members>
 		<members>Marketing_Reward__c.KAI_4_Retainer_Bundle__c</members>
 		<members>Marketing_Reward__c.KAI_8_Retainer_Bundle__c</members>
@@ -10,18 +13,30 @@
 		<members>Marketing_Reward__c.KAI_Retainer_Price__c</members>
 		<members>Marketing_Reward__c.KAI_STL_Price__c</members>
 		<members>Marketing_Reward__c.KAI_uAdjust_10_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_2_Retainer_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_4_Retainer_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_8_Retainer_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_Aligner_Price__c</members>
+		<members>Marketing_Reward_Association__c.KAI_Comprehensive_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_Mild_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.KAI_Retainer_Price__c</members>
+		<members>Marketing_Reward_Association__c.KAI_STL_Price__c</members>
+		<members>Marketing_Reward_Association__c.KAI_uAdjust_10_Bundle__c</members>
 		<name>CustomField</name>
 	</types>
 	<types>
 		<members>Marketing_Reward_Record_Page</members>
+		<members>Marketing_Reward_Association_Record_Page1</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
 		<members>Create_MRAs_for_New_Accounts</members>
+		<members>Create_KAI_MRAs</members>
 		<name>Flow</name>
 	</types>
 	<types>
 		<members>Create_MRAs_for_New_Accounts</members>
+		<members>Create_KAI_MRAs</members>
 		<name>FlowDefinition</name>
 	</types>
 	<types>

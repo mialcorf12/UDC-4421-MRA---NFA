@@ -22,7 +22,7 @@ ValidationRule Onboarding_Account_Owner
 
 
 
-# UDC-4421 KAI MRA
+# UDC-4421 KAI MR y MRA
 ## 1) New KAI fields
     - KAI_2_Retainer_Bundle__c
     - KAI_4_Retainer_Bundle__c
@@ -39,6 +39,11 @@ ValidationRule Onboarding_Account_Owner
     - Marketing Program Layout
     - Marketing_Reward_Record_Page
 
+    - Marketing_Reward_Association_Record_Page-> cambia nombre a -> MRA_Program_Association
+    - Marketing_Reward_Association_Record_Page1 -> cambia nombre a -> MRA_Promotion_Association
+    set org default
+
+
 # 2) Records MR
     - KAI
     - Fresh Start MRA
@@ -47,31 +52,19 @@ ValidationRule Onboarding_Account_Owner
     - STLONE MRA 
 
 # 3) no need changes
-- Process Builder - Version 4: Create MRA send to Boomi	- Active
 - Process Builder - Version 18: Create Futures MRA - Active
-- Process Builder - Create MRAs for New Accounts - Inactive
-- Flow Builder - Create MRAs for New Accounts - V2
+- Process Builder - Version 4: Create MRA send to Boomi	- Active
+- Process Builder - Version 18: Create MRAs for New Accounts - Inactive    *** ATTENTION ***
+- Process Builder - Version 16: Create MRA when uD7 date added to Company - Inactive
 
 # 4) new Flow Builder 
+- Flow Builder - Create KAI MRAs - V1
+
+# 5) WITH changes
+- Flow Builder - Create MRAs for New Accounts - V3 - Active
 
 
-# 5) need changes
-- Flow Builder Record Trigger - Copy pricing fields on MRA record from MR record on Effective date - V8
-- Flow Builder Copy pricing fields on MRA record from MR record on Effective date - V9
-
-
-
-
-
-
-# ?????? Process Builder - Create MRAs for New Accounts ?????
-
-
-
-
-
-
-
-
+- Flow Builder - Record Trigger - Copy pricing fields on MRA record from MR record on Effective date - V8
+- Flow Builder - Copy pricing fields on MRA record from MR record on Effective date - V8
 
 
