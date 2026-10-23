@@ -13,6 +13,7 @@
 		<members>Marketing_Reward__c.KAI_Retainer_Price__c</members>
 		<members>Marketing_Reward__c.KAI_STL_Price__c</members>
 		<members>Marketing_Reward__c.KAI_uAdjust_10_Bundle__c</members>
+		<members>Marketing_Reward_Association__c.Active__c</members>
 		<members>Marketing_Reward_Association__c.KAI_2_Retainer_Bundle__c</members>
 		<members>Marketing_Reward_Association__c.KAI_4_Retainer_Bundle__c</members>
 		<members>Marketing_Reward_Association__c.KAI_8_Retainer_Bundle__c</members>
@@ -25,23 +26,28 @@
 		<name>CustomField</name>
 	</types>
 	<types>
-		<members>Marketing_Reward_Record_Page</members>
-		<members>Marketing_Reward_Association_Record_Page1</members>
+		<members>MR_Program_Association</members>
+		<members>MRA_Program_Association</members>
+		<members>MRA_Promotion_Association</members>
 		<name>FlexiPage</name>
 	</types>
 	<types>
-		<members>Create_MRAs_for_New_Accounts</members>
 		<members>Create_KAI_MRAs</members>
+		<members>Create_MRAs_for_New_Accounts</members>
+		<members>NFA_Creation</members>
+		<members>NFA_Send_to_WebApp_Update</members>
+		<members>Copy_pricing_fields_on_MRA_record_from_MR_record_on_Effective_date</members>
+		<members>Record_Trigger_Copy_pricing_fields_on_MRA_record_from_MR_record_on_Effective_dat</members>
 		<name>Flow</name>
 	</types>
-	<types>
-		<members>Create_MRAs_for_New_Accounts</members>
+	<!-- <types>
 		<members>Create_KAI_MRAs</members>
+		<members>Create_MRAs_for_New_Accounts</members>
+		<members>NFA_Creation</members>
+		<members>NFA_Send_to_WebApp_Update</members>
+		<members>Copy_pricing_fields_on_MRA_record_from_MR_record_on_Effective_date</members>
+		<members>Record_Trigger_Copy_pricing_fields_on_MRA_record_from_MR_record_on_Effective_dat</members>
 		<name>FlowDefinition</name>
-	</types>
-	<types>
-		<members>Marketing_Reward__c-Marketing Program Layout</members>
-		<name>Layout</name>
-	</types>
+	</types>-->
 	<version>68.0</version>
 </Package>

@@ -10,12 +10,13 @@ ValidationRule Onboarding_Account_Owner
     - Reva
 
 ## 2) new changes
+- DEPLOY AND Activate 
+    - Flow Builder NFA Creation - V1
+    - Flow Builder NFA Send to WebApp Update - V1
+
 - Desactivate
     - Process Builder - New Customer Feature Flag Update - NFA
     - Process Builder - NFA Create
-- Activate 
-    - Flow Builder NFA Creation - V1
-    - Flow Builder NFA Send to WebApp Update - V1
 - Delete
     - Flow Builder New Acct Auto Create NFA - V1
 
@@ -35,13 +36,11 @@ ValidationRule Onboarding_Account_Owner
     - KAI_uAdjust_10_Bundle__c
 
 ## set FLS
-## deploy pagelayout y flexipage
-    - Marketing Program Layout
-    - Marketing_Reward_Record_Page
-
+## deploy flexipage (lightning record pages)
+    - Marketing_Reward_Record_Page-> cambia nombre a -> MR_Program_Association
     - Marketing_Reward_Association_Record_Page-> cambia nombre a -> MRA_Program_Association
     - Marketing_Reward_Association_Record_Page1 -> cambia nombre a -> MRA_Promotion_Association
-    set org default
+    set all as org default
 
 
 # 2) Records MR
@@ -62,9 +61,5 @@ ValidationRule Onboarding_Account_Owner
 
 # 5) WITH changes
 - Flow Builder - Create MRAs for New Accounts - V3 - Active
-
-
-- Flow Builder - Record Trigger - Copy pricing fields on MRA record from MR record on Effective date - V8
-- Flow Builder - Copy pricing fields on MRA record from MR record on Effective date - V8
-
-
+- Flow Builder - Copy pricing fields on MRA record from MR record on Effective date - V9
+- Flow Builder - Record Trigger - Copy pricing fields on MRA record from MR record on Effective date - V9
