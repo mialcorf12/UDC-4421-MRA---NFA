@@ -447,26 +447,6 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
-                <fieldItem>Record.KAI_Aligner_Price__c</fieldItem>
-                <identifier>RecordKAI_Aligner_Price_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.KAI_Retainer_Price__c</fieldItem>
-                <identifier>RecordKAI_Retainer_Price_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
                 <fieldItem>Record.KAI_STL_Price__c</fieldItem>
                 <identifier>RecordKAI_STL_Price_cField</identifier>
             </fieldInstance>
@@ -491,10 +471,6 @@
                 <identifier>RecordKAI_Comprehensive_Bundle_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <name>Facet-3e4cdd5d-3b93-4b01-9d3e-2aa669e00d05</name>
-        <type>Facet</type>
-    </flexiPageRegions>
-    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>
@@ -505,6 +481,10 @@
                 <identifier>RecordKAI_uAdjust_10_Bundle_cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <name>Facet-3e4cdd5d-3b93-4b01-9d3e-2aa669e00d05</name>
+        <type>Facet</type>
+    </flexiPageRegions>
+    <flexiPageRegions>
         <itemInstances>
             <fieldInstance>
                 <fieldInstanceProperties>

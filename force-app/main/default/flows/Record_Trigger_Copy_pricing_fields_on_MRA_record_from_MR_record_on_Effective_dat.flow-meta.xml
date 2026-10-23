@@ -204,12 +204,6 @@
             </value>
         </inputAssignments>
         <inputAssignments>
-            <field>KAI_Aligner_Price__c</field>
-            <value>
-                <elementReference>$Record.Marketing_Program__r.KAI_Aligner_Price__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
             <field>KAI_Comprehensive_Bundle__c</field>
             <value>
                 <elementReference>$Record.Marketing_Program__r.KAI_Comprehensive_Bundle__c</elementReference>
@@ -219,12 +213,6 @@
             <field>KAI_Mild_Bundle__c</field>
             <value>
                 <elementReference>$Record.Marketing_Program__r.KAI_Mild_Bundle__c</elementReference>
-            </value>
-        </inputAssignments>
-        <inputAssignments>
-            <field>KAI_Retainer_Price__c</field>
-            <value>
-                <elementReference>$Record.Marketing_Program__r.KAI_Retainer_Price__c</elementReference>
             </value>
         </inputAssignments>
         <inputAssignments>

@@ -183,20 +183,6 @@
             </value>
         </assignmentItems>
         <assignmentItems>
-            <assignToReference>Loop_1.KAI_Aligner_Price__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_the_MR_Record.KAI_Aligner_Price__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
-            <assignToReference>Loop_1.KAI_Retainer_Price__c</assignToReference>
-            <operator>Assign</operator>
-            <value>
-                <elementReference>Get_the_MR_Record.KAI_Retainer_Price__c</elementReference>
-            </value>
-        </assignmentItems>
-        <assignmentItems>
             <assignToReference>Loop_1.KAI_STL_Price__c</assignToReference>
             <operator>Assign</operator>
             <value>
