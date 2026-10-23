@@ -2,10 +2,15 @@
 <ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Cannot_Create_MRA_for_inactive_account</fullName>
     <active>true</active>
-    <description>Company status must be &apos;uLab Account&apos; before creating new MRA</description>
+    <description>Company status must be &apos;uLab Account&apos; or &apos;kai Account&apos; before creating new MRA</description>
     <errorConditionFormula>AND(
   ISNEW(),
-  NOT(ISPICKVAL(Company__r.Account_Status__c, &quot;uLab Account&quot;)),
+  NOT(
+    OR(
+      ISPICKVAL(Company__r.Account_Status__c, &quot;uLab Account&quot;),
+      ISPICKVAL(Company__r.Account_Status__c, &quot;kai Account&quot;)
+      )
+  ),
   NOT(
     CONTAINS(
       LOWER($Profile.Name),
@@ -13,5 +18,5 @@
     )
   )
 )</errorConditionFormula>
-    <errorMessage>You cannot create a new MRA for this company because its company status is not &quot;uLab Account&quot;.</errorMessage>
+    <errorMessage>You cannot create a new MRA for this company because its company status is not &quot;uLab Account&quot; or &quot;kai Account&quot;.</errorMessage>
 </ValidationRule>
