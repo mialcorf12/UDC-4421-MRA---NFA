@@ -45,5 +45,9 @@
 		<members>Record_Trigger_Copy_pricing_fields_on_MRA_record_from_MR_record_on_Effective_dat</members>
 		<name>FlowDefinition</name>
 	</types>
+	<types>
+		<members>Marketing_Reward_Association__c.Cannot_Create_MRA_for_inactive_account</members>
+		<name>ValidationRule</name>
+	</types>
 	<version>68.0</version>
 </Package>
