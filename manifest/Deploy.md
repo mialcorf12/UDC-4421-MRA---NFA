@@ -77,3 +77,8 @@ SELECT Name, Description__c, Option_Type__c, Status__c, Type__c, Effective_Date_
 # 7) create new KAI Program Bundle Associations associated with KAI MR
 Link 6 to 2
 SELECT Marketing_Reward__r.Name__c, Bundle__r.Name, Marketing_Reward__c, Bundle__c, Bundle_Type__c, Effective_Date__c, End_Date__c, custrecord_included_in_kai__c, custrecord_udesign_cloud_bundle_type__c, custrecord_udesign_cloud_bundle_label__c, Send_to_Boomi__c FROM Program_Bundle_Associations__c WHERE Program_Name__c='KAI' ORDER BY Bundle__r.Name
+
+
+# 8) Minor changes on flows
+- Flow Builder - Send to NetSuite - V1 - V4
+- Flow Builder - KAI Boomi Approved/Rejected - V6
